@@ -60,7 +60,7 @@ include(CheckIncludeFileCXX)
 set(CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
 
 # First check the C++ compiler
-find_package(CompilerCheck)
+#find_package(CompilerCheck)
 
 # Add C11 or C14 flag depending on compiler detection
 if (NOT compiler_is_c14)
@@ -406,6 +406,7 @@ endif (Build_Documentation)
 #------------------------
 
 install (FILES ${CMAKE_SOURCE_DIR}/cmake/FindTRIQS.cmake DESTINATION share/triqs/cmake)
+configure_file(triqs.lmod.in triqs.lmod @ONLY)
 
 #------------------------
 # TRIQS cmake file and config.h

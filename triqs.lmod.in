@@ -1,0 +1,14 @@
+#%Module1.0
+
+set     name        triqs
+set     root        @CMAKE_INSTALL_PREFIX@
+
+setenv      TRIQS_DIR    $root
+setenv      TRIQS_ROOT   $root
+setenv      TRIQS_LIB    $root/lib
+setenv      TRIQS_INC    $root/include
+#setenv      TRIQS_BIN    $root/bin
+
+prepend-path      LD_LIBRARY_PATH   $root/lib
+prepend-path      PATH              $root/bin
+prepend-path      PYTHONPATH        $root/lib/python2.7/site-packages/
