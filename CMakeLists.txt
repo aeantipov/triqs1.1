@@ -240,6 +240,10 @@ endif()
 if(HDF5_IS_PARALLEL)
  message(FATAL "parallel(MPI) hdf5 is detected. The standard version is preferred.")
 endif(HDF5_IS_PARALLEL)
+if(HDF5_HL_LIBRARIES)    # CMake 3.6.0 and later puts libhdf5_hl into a separate variable
+ list(APPEND HDF5_LIBRARIES ${HDF5_HL_LIBRARIES})
+ list(REMOVE_DUPLICATES HDF5_LIBRARIES)
+endif(HDF5_HL_LIBRARIES)
 message( STATUS " HDF5_LIBRARIES = ${HDF5_LIBRARIES} ")
 mark_as_advanced(HDF5_DIR) # defined somewhere else ? what is it ?
 
